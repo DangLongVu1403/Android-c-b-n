@@ -1,6 +1,8 @@
 package com.example.broadcast
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -19,12 +21,28 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val email: String = binding.editTextTextEmailAddress.text.toString()
+        val pass: String = binding.editTextTextPassword.text.toString()
+        if(email == "dangvu@gmail.com" && pass == "123456"){
+            val intent = Intent(this@MainActivity, ListContact::class.java)
+            startActivity(intent)
+        }
         binding.btn.setOnClickListener {
             val intent = Intent(this@MainActivity, ListContact::class.java)
             startActivity(intent)
         }
         binding.textView2.setOnClickListener {
-            
+            val intent = Intent(this@MainActivity, map::class.java)
+            startActivity(intent)
+        }
+        val sharedPref = this.getSharedPreferences("my_preferences", Context.MODE_PRIVATE)
+        binding.editTextTextEmailAddress.setText(sharedPref.getString("email","example@gmail.com"))
+        binding.editTextTextPassword.setText(sharedPref.getString("pass",""))
+        binding.save.setOnClickListener {
+            val editor = sharedPref.edit()
+            editor.putString("email", email)
+            editor.putString("pass", pass)
+            editor.apply()
         }
 //        var helper = MyDB(applicationContext)
 //        val db = helper.readableDatabase

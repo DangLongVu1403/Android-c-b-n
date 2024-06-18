@@ -27,9 +27,11 @@ class ListContact : AppCompatActivity() {
         val adapter = Adapter_list_contact(ds,object : RecyclerViewOnClick {
             override fun onClickItem(pos: Int){
                 val taikhoan = ds[pos]
-                val intent = Intent(Intent.ACTION_DIAL).apply {
-                    data = Uri.parse("tel:${taikhoan.soDienThoai}")
-                }
+                val intent = Intent(this@ListContact, ContactDetailActivity::class.java )
+                intent.putExtra("name", taikhoan.hoTen)
+                intent.putExtra("phone", taikhoan.soDienThoai)
+                intent.putExtra("username", taikhoan.userName)
+                intent.putExtra("password", taikhoan.passWord)
                 startActivity(intent)
             }
         })

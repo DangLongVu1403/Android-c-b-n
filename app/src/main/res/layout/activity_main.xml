@@ -71,6 +71,13 @@
         android:text="LOGIN"
         android:layout_gravity="center"
         tools:layout_editor_absoluteY="296dp" />
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SAVE"
+        android:layout_gravity="center"
+        tools:layout_editor_absoluteY="296dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -78,6 +85,6 @@
         android:layout_height="wrap_content"
         android:text="Terms &amp; Conditions"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="200dp"/>
+        android:layout_marginTop="150dp"/>
 
 </LinearLayout>
