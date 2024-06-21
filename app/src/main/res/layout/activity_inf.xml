@@ -7,4 +7,52 @@
     android:layout_height="match_parent"
     tools:context=".Inf">
 
+    <ImageView
+        android:id="@+id/img_inf"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tvHoTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_inf"/>
+
+    <TextView
+        android:id="@+id/tvdiachi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="address"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvHoTen"/>
+
+    <TextView
+        android:id="@+id/tvsdt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="phonenumber"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvdiachi"/>
+
+    <TextView
+        android:id="@+id/tvngaysinh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ngaysinh"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvsdt"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
